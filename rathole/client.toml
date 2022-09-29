@@ -1,0 +1,6 @@
+[client]
+remote_addr = "tocadocoelho.ecoplanos.pt:2333"
+
+[client.services.digitalbuilding]
+local_addr = "127.0.0.1:3000"
+# local_addr = "grafana:3000"

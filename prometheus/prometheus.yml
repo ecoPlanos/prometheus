@@ -7,7 +7,7 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-      monitor: 'my-project'
+      monitor: 'dasheco-server'
 
 # Load and evaluate rules in this file every 'evaluation_interval' seconds.
 rule_files:
@@ -51,17 +51,18 @@ scrape_configs:
 #     static_configs:
 #          - targets: ['cadvisor:8080']
 
-  - job_name: 'node-exporter'
-
+  - job_name: 'node'
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 15s
-  
+
     dns_sd_configs:
     - names:
       - 'tasks.node-exporter'
       type: 'A'
       port: 9100
 
+    static_configs:
+      - targets: ['node-exporter:9100']
 #  - job_name: 'pushgateway'
 #    scrape_interval: 10s
 #    dns_sd_configs:
