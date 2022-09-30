@@ -6,7 +6,13 @@ volumes:
 
 networks:
   front-tier:
+    ipam:
+      config:
+        - subnet: 192.168.243.200/29
   back-tier:
+    ipam:
+      config:
+        - subnet: 192.168.244.200/28
 
 services:
 
@@ -182,5 +188,3 @@ services:
       - ./rathole/client.toml:/app/client.toml
     command: "./rathole -c /app/client.toml"
     network_mode: host
-    # networks:
-    #   - front-tier
