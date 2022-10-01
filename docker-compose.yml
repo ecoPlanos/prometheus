@@ -183,6 +183,8 @@ services:
   rathole:
     build: rathole
     container_name: rathole
+    depends_on:
+      - grafana
     restart: always
     volumes:
       - ./rathole/client.toml:/app/client.toml
