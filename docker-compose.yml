@@ -8,11 +8,11 @@ networks:
   front-tier:
     ipam:
       config:
-        - subnet: 192.168.243.200/29
+        - subnet: 192.168.242.128/29
   back-tier:
     ipam:
       config:
-        - subnet: 192.168.244.200/28
+        - subnet: 192.168.242.136/28
 
 services:
 

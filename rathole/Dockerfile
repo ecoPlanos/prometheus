@@ -9,3 +9,4 @@ WORKDIR /app
 COPY get_rathole.sh /app/
 RUN sh get_rathole.sh
 RUN rm get_rathole.sh
+RUN apk del curl wget
