@@ -12,7 +12,7 @@ networks:
   back-tier:
     ipam:
       config:
-        - subnet: 192.168.242.136/28
+        - subnet: 192.168.242.144/28
 
 services:
 
